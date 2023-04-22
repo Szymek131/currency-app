@@ -9,7 +9,7 @@ export const convertPLNToUSD = (PLN) => {
   }
 
   if (PLN < 0) {
-    PLN = 0;
+    return 'Wrong value';
   }
   const PLNtoUSD = PLN / 3.5;
   const formatter = new Intl.NumberFormat('en-US', {

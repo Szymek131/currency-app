@@ -9,7 +9,7 @@ export const convertUSDToPLN = (USD) => {
   }
 
   if (USD < 0) {
-    USD = 0;
+    return 'Wrong value';
   }
 
 

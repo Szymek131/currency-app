@@ -21,9 +21,9 @@ describe('convertUSDToPLN', () => {
     expect(convertUSDToPLN(null)).toBe('Error');
     expect(convertUSDToPLN(function () { })).toBe('Error');
   });
-  it('should return PLN 0.00 when input is less than 0', () => {
-    expect(convertUSDToPLN(-1)).toBe('PLN 0.00');
-    expect(convertUSDToPLN(-6)).toBe('PLN 0.00');
-    expect(convertUSDToPLN(-1234)).toBe('PLN 0.00');
+  it('should return text "Wrong value" when input is less than 0', () => {
+    expect(convertUSDToPLN(-1)).toBe('Wrong value');
+    expect(convertUSDToPLN(-6)).toBe('Wrong value');
+    expect(convertUSDToPLN(-1234)).toBe('Wrong value');
   });
 });
