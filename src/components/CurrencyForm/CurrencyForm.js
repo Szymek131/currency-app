@@ -4,6 +4,7 @@ import Select from './../Select/Select';
 import Button from './../Button/Button';
 import styles from './CurrencyForm.module.scss';
 
+const supportedCurrencies = { USD: 'USD', PLN: 'PLN' }
 const CurrencyForm = ({ action }) => {
   const [amount, setAmount] = useState('');
   const [from, setFrom] = useState('PLN');
@@ -28,15 +29,15 @@ const CurrencyForm = ({ action }) => {
       <label>
         <span>From</span>
         <Select data-testid="from-select" onChange={e => setFrom(e.target.value)}>
-          <option value="PLN">PLN</option>
-          <option value="USD">USD</option>
+          <option value={supportedCurrencies.PLN}>PLN</option>
+          <option value={supportedCurrencies.USD}>USD</option>
         </Select>
       </label>
       <label>
         <span>To</span>
         <Select data-testid="to-select" onChange={e => setTo(e.target.value)}>
-          <option value="PLN">PLN</option>
-          <option value="USD">USD</option>
+          <option value={supportedCurrencies.PLN}>PLN</option>
+          <option value={supportedCurrencies.USD}>USD</option>
         </Select>
       </label>
       <Button>Convert</Button>
