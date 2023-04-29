@@ -3,13 +3,14 @@ import { convertUSDToPLN } from './../../utils/convertUSDToPLN';
 import { convertPLNToUSD } from './../../utils/convertPLNToUSD';
 import { formatAmountInCurrency } from './../../utils/formatAmountInCurrency';
 import { useMemo } from 'react';
+import { CURRENCIES } from '../../consts';
+
 import styles from './ResultBox.module.scss';
 
 const ResultBox = ({ from, to, amount }) => {
-  const supportedCurrencies = { USD: 'USD', PLN: 'PLN' }
   const convertedAmount = useMemo(() => {
-    if (from === supportedCurrencies.USD && to === supportedCurrencies.PLN) return convertUSDToPLN(amount);
-    if (from === supportedCurrencies.PLN && to === supportedCurrencies.USD) return convertPLNToUSD(amount);
+    if (from === CURRENCIES.usd && to === CURRENCIES.pln) return convertUSDToPLN(amount);
+    if (from === CURRENCIES.pln && to === CURRENCIES.usd) return convertPLNToUSD(amount);
     return formatAmountInCurrency(amount, from);
   }, [from, to, amount]);
 

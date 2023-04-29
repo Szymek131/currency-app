@@ -1,3 +1,5 @@
+import { CURRENCIES } from '../consts';
+
 export const convertUSDToPLN = (USD) => {
   if (typeof USD === 'string' ||
     typeof USD === 'undefined') {
@@ -17,7 +19,7 @@ export const convertUSDToPLN = (USD) => {
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'PLN'
+    currency: CURRENCIES.pln
   });
 
   return formatter.format(USDtoPLN).replace(/\u00a0/g, ' ');
